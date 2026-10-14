@@ -48,7 +48,8 @@
     .consent input{width:auto;margin-top:5px}
     .form-submit{width:100%;background:var(--green);color:#fff;padding:15px;border-radius:9px;font-weight:800;border:0;cursor:pointer;font:inherit;transition:background .18s ease,transform .18s ease}
     .form-submit:hover{background:var(--green2)} .privacy{font-size:.78rem;color:var(--muted);margin:12px 0 0}
-    .notice{padding:12px 14px;background:#fff6df;border:1px solid #ead7a7;border-radius:8px;color:#59471e;font-size:.86rem;margin-top:16px}
+    .notice{padding:14px 16px;background:#eaf4ec;border:1px solid #b9d6bf;border-radius:9px;color:#214c30;font-size:.95rem;margin-top:16px}
+    .notice.error{background:#fff6df;border-color:#ead7a7;color:#59471e}
     .closing{background:var(--green);color:white;text-align:center;padding:58px 0}.closing h2{color:white}.closing p{color:#dce8e2;max-width:650px;margin:0 auto 22px}
     footer{padding:25px 0;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -151,8 +152,8 @@
             <label class="consent"><input type="checkbox" name="contact_consent" value="yes" required><span>I agree that Dominion Recovery may contact me about this enquiry. *</span></label>
             <button class="form-submit" type="submit">Send my enquiry</button>
             <p class="privacy">Please share only the information needed for the team to respond. Do not include detailed medical history or other highly sensitive information.</p>
-            <div id="form-status" class="notice" role="status" hidden></div>
           </form>
+          <div id="form-status" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
         </div>
       </div>
     </section>
@@ -169,15 +170,50 @@
   <footer><div class="wrap footer-inner"><div><strong>Dominion Recovery</strong><br>Hope • Support • A New Beginning</div><div>A conversation can be the beginning of a new direction.</div></div></footer>
 
   <script>
-    // Prevent a pretend "successful" submission if the form endpoint is not configured.
-    document.getElementById('enquiry-form').addEventListener('submit', function(event) {
-      const endpoint = this.getAttribute('action');
+    const enquiryForm = document.getElementById('enquiry-form');
+    const formStatus = document.getElementById('form-status');
+
+    enquiryForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const endpoint = this.action;
       if (!endpoint || endpoint === 'FORM_ENDPOINT_URL') {
-        event.preventDefault();
-        const status = document.getElementById('form-status');
-        status.hidden = false;
-        status.textContent = 'This form is a design template and has not been connected yet. Please connect a secure form endpoint before publishing.';
-        status.scrollIntoView({behavior:'smooth', block:'nearest'});
+        formStatus.classList.add('error');
+        formStatus.textContent = 'This form has not been connected yet. Please try again later.';
+        formStatus.hidden = false;
+        formStatus.focus();
+        return;
+      }
+
+      const submitButton = this.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+      formStatus.hidden = true;
+      formStatus.classList.remove('error');
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Form submission failed with status ${response.status}`);
+        }
+
+        this.reset();
+        this.hidden = true;
+        formStatus.textContent = 'Thank you. Your enquiry has been sent successfully. The Dominion Recovery team will be in touch.';
+        formStatus.hidden = false;
+        formStatus.focus();
+      } catch (error) {
+        console.error('Unable to submit enquiry:', error);
+        formStatus.classList.add('error');
+        formStatus.textContent = 'We could not send your enquiry just now. Please check your connection and try again.';
+        formStatus.hidden = false;
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send my enquiry';
+        formStatus.focus();
       }
     });
   </script>

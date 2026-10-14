@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153d35">
+  <title>Dominion Recovery | A New Beginning Starts Here</title>
+  <meta name="description" content="Compassionate, faith-centred guidance for people exploring recovery and support options.">
+  <meta property="og:title" content="Dominion Recovery | A New Beginning Starts Here">
+  <meta property="og:description" content="Explore compassionate, faith-centred support and take a considered next step.">
+  <style>
+    :root{--green:#153d35;--green2:#24594c;--gold:#d9b66f;--cream:#fbf8f1;--ink:#172a25;--muted:#5c6b65;--line:#dce5df;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit} .wrap{width:min(1120px,92%);margin:auto}
+    header{padding:20px 0;background:var(--cream);border-bottom:1px solid rgba(21,61,53,.08)}
+    .brand{font-weight:800;letter-spacing:.04em;color:var(--green);font-size:1.1rem}.brand span{display:block;font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .hero{background:linear-gradient(120deg,rgba(14,48,40,.96),rgba(27,76,63,.88)),radial-gradient(circle at 80% 20%,#6e8d6c,#153d35);color:white;padding:84px 0 90px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+    .eyebrow{color:#f0d79e;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:750}
+    h1{font-size:clamp(2.35rem,5vw,4.5rem);line-height:1.06;letter-spacing:-.04em;margin:.65rem 0 1.2rem;max-width:700px}
+    .hero p{font-size:1.12rem;color:#e4eee9;max-width:600px}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#20372f;font-weight:800;text-decoration:none;border:0;border-radius:10px;padding:14px 22px;cursor:pointer;font-size:1rem;box-shadow:0 8px 22px rgba(0,0,0,.13);transition:transform .18s ease,filter .18s ease}
+    .button:hover{filter:brightness(1.06);transform:translateY(-1px)} .hero-note{font-size:.88rem!important;color:#d3e0da!important;margin-top:13px}
+    .promise{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:32px;box-shadow:0 22px 55px rgba(0,0,0,.12);backdrop-filter:blur(6px)}
+    .promise .quote{font-size:1.45rem;line-height:1.35;font-weight:700;margin:0 0 14px}
+    .promise p{font-size:.96rem;margin:0;color:#dce8e2}
+    section{padding:76px 0}.section-head{max-width:700px;margin-bottom:32px}
+    h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;letter-spacing:-.03em;color:var(--green);margin:0 0 12px}
+    .section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 8px 24px rgba(21,61,53,.035);transition:transform .18s ease,box-shadow .18s ease}
+    .card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(21,61,53,.09)}
+    .card .num{font-weight:800;color:var(--green2);font-size:.8rem;letter-spacing:.12em}
+    .card h3{margin:9px 0 7px;color:var(--green);font-size:1.15rem}.card p{margin:0;color:var(--muted)}
+    .form-section{background:#eef3ed}
+    .form-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:40px;align-items:start}
+    .form-aside p{color:var(--muted)}
+    .form-card{background:white;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 14px 45px rgba(21,61,53,.08)}
+    .form-card h3{margin:0 0 5px;color:var(--green);font-size:1.45rem}.small{font-size:.87rem;color:var(--muted)}
+    form{margin-top:20px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}
+    label{font-weight:700;font-size:.91rem}
+    input,select,textarea{font:inherit;width:100%;border:1px solid #cbd7cf;border-radius:9px;padding:12px 13px;background:#fff;color:var(--ink);transition:border-color .18s ease,box-shadow .18s ease}
+    input:focus,select:focus,textarea:focus{outline:3px solid rgba(36,89,76,.15);border-color:var(--green2)}
+    textarea{min-height:100px;resize:vertical}
+    .consent{display:flex;align-items:flex-start;gap:10px;margin:18px 0;color:var(--muted);font-size:.88rem}
+    .consent input{width:auto;margin-top:5px}
+    .form-submit{width:100%;background:var(--green);color:#fff;padding:15px;border-radius:9px;font-weight:800;border:0;cursor:pointer;font:inherit;transition:background .18s ease,transform .18s ease}
+    .form-submit:hover{background:var(--green2)} .privacy{font-size:.78rem;color:var(--muted);margin:12px 0 0}
+    .notice{padding:12px 14px;background:#fff6df;border:1px solid #ead7a7;border-radius:8px;color:#59471e;font-size:.86rem;margin-top:16px}
+    .closing{background:var(--green);color:white;text-align:center;padding:58px 0}.closing h2{color:white}.closing p{color:#dce8e2;max-width:650px;margin:0 auto 22px}
+    footer{padding:25px 0;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    :focus-visible{outline:3px solid #b88935;outline-offset:3px}
+    @media(max-width:780px){.hero{padding:58px 0 62px}.hero-grid,.form-grid{grid-template-columns:1fr;gap:28px}.cards{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.promise{padding:24px}.form-card{padding:24px}section{padding:56px 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1052906717721108');
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1052906717721108&ev=PageView&noscript=1"
+    alt=""></noscript>
+  <header><div class="wrap"><div class="brand">DOMINION RECOVERY<span>Hope • Support • A New Beginning</span></div></div></header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Compassionate, faith-centred support</div>
+          <h1>A supportive place to explore the way forward.</h1>
+          <p>Dominion Recovery offers thoughtful, faith-centred guidance for people considering a healthier path forward. Start with a conversation focused on understanding your goals and exploring suitable next steps.</p>
+          <a class="button" href="#enquiry">Take the first step</a>
+          <p class="hero-note">An enquiry is a first conversation, not a commitment to a programme.</p>
+        </div>
+        <aside class="promise">
+          <p class="quote">“A thoughtful conversation can help clarify possible next steps.”</p>
+          <p>Explore what support could look like in a calm, respectful conversation.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Support that starts with understanding.</h2>
+          <p>Every path forward is different. The first step is listening, understanding goals, and discussing suitable options.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="num">01 / LISTEN</div><h3>A judgement-free conversation</h3><p>Share only what is relevant to the enquiry. Every conversation is approached with care and respect.</p></article>
+          <article class="card"><div class="num">02 / EXPLORE</div><h3>Understand your options</h3><p>Talk through your goals, the kind of support you are looking for, and possible next steps.</p></article>
+          <article class="card"><div class="num">03 / MOVE FORWARD</div><h3>Take one step at a time</h3><p>Build a plan for moving forward at a pace that is appropriate for your situation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" id="enquiry">
+      <div class="wrap form-grid">
+        <div class="form-aside">
+          <div class="eyebrow" style="color:var(--green2)">Start here</div>
+          <h2>Let’s talk about your next step.</h2>
+          <p>Complete the enquiry form and the team can follow up using the contact details provided. Please avoid sharing detailed medical or highly personal information in this first form.</p>
+          <p class="small">If you are in immediate danger or experiencing a medical emergency, contact local emergency services or seek urgent medical care.</p>
+        </div>
+        <div class="form-card">
+          <h3>Enquiry form</h3>
+          <p class="small">Fields marked * are required.</p>
+
+          <form id="enquiry-form" action="https://formspree.io/f/xppqozez" method="POST">
+            <div class="fields">
+              <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field full"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field full"><label for="support">What kind of support are you looking for? *</label>
+                <select id="support" name="support_interest" required>
+                  <option value="">Choose an option</option>
+                  <option>Information about the programme</option>
+                  <option>Support for myself</option>
+                  <option>Support for a loved one</option>
+                  <option>Discussing available options</option>
+                </select>
+              </div>
+              <div class="field full"><label for="readiness">Would you like to speak with someone about next steps? *</label>
+                <select id="readiness" name="readiness" required>
+                  <option value="">Choose an option</option>
+                  <option>Yes, I am ready to talk</option>
+                  <option>I am exploring my options</option>
+                  <option>I am enquiring on behalf of someone else</option>
+                </select>
+              </div>
+              <div class="field full"><label for="budget">Can you discuss programme fees with our team if the programme may be suitable? *</label>
+                <select id="budget" name="fee_discussion" required>
+                  <option value="">Choose an option</option>
+                  <option>Yes, I can discuss the fees</option>
+                  <option>I need more information first</option>
+                  <option>I would like to understand other options</option>
+                </select>
+              </div>
+              <div class="field full"><label for="message">Anything else you’d like us to know? (optional)</label><textarea id="message" name="message" placeholder="Keep this brief. Please do not include detailed medical history or other highly sensitive information."></textarea></div>
+            </div>
+            <label class="consent"><input type="checkbox" name="contact_consent" value="yes" required><span>I agree that Dominion Recovery may contact me about this enquiry. *</span></label>
+            <button class="form-submit" type="submit">Send my enquiry</button>
+            <p class="privacy">Please share only the information needed for the team to respond. Do not include detailed medical history or other highly sensitive information.</p>
+            <div id="form-status" class="notice" role="status" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2>There is hope for the road ahead.</h2>
+        <p>One conversation can open up new possibilities. Explore what support could look like at a considered pace.</p>
+        <a class="button" href="#enquiry">Make a private enquiry</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div><strong>Dominion Recovery</strong><br>Hope • Support • A New Beginning</div><div>A conversation can be the beginning of a new direction.</div></div></footer>
+
+  <script>
+    // Prevent a pretend "successful" submission if the form endpoint is not configured.
+    document.getElementById('enquiry-form').addEventListener('submit', function(event) {
+      const endpoint = this.getAttribute('action');
+      if (!endpoint || endpoint === 'FORM_ENDPOINT_URL') {
+        event.preventDefault();
+        const status = document.getElementById('form-status');
+        status.hidden = false;
+        status.textContent = 'This form is a design template and has not been connected yet. Please connect a secure form endpoint before publishing.';
+        status.scrollIntoView({behavior:'smooth', block:'nearest'});
+      }
+    });
+  </script>
+</body>
+</html>

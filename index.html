@@ -110,48 +110,46 @@
         <div class="form-aside">
           <div class="eyebrow" style="color:var(--green2)">Start here</div>
           <h2>Let’s talk about your next step.</h2>
-          <p>Complete the enquiry form and the team can follow up using the contact details provided. Please avoid sharing detailed medical or highly personal information in this first form.</p>
+          <p>This program is not for everyone. It is for people struggling with addiction who are ready to break the cycle and recover fully. Complete the form to help us understand whether personalized coaching may be right for you.</p>
           <p class="small">If you are in immediate danger or experiencing a medical emergency, contact local emergency services or seek urgent medical care.</p>
         </div>
         <div class="form-card">
           <h3>Enquiry form</h3>
-          <p class="small">Fields marked * are required.</p>
+          <p class="small">Please answer the questions below. Fields marked * are required.</p>
 
           <form id="enquiry-form" action="https://formspree.io/f/xppqozez" method="POST">
             <div class="fields">
-              <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="name">Name *</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label for="whatsapp">WhatsApp number *</label><input id="whatsapp" name="whatsapp_number" type="tel" autocomplete="tel" required></div>
               <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-              <div class="field full"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-              <div class="field full"><label for="support">What kind of support are you looking for? *</label>
-                <select id="support" name="support_interest" required>
+              <div class="field full"><label for="addiction">What addiction are you struggling with? *</label><input id="addiction" name="addiction" required></div>
+              <div class="field full"><label for="duration">How long have you been struggling with this? *</label><input id="duration" name="struggle_duration" required></div>
+              <div class="field full"><label for="weekly_commitment">Are you willing and able to commit 2 hours weekly for 3 months for personalized coaching to help you overcome your addiction? *</label>
+                <select id="weekly_commitment" name="weekly_commitment" required>
                   <option value="">Choose an option</option>
-                  <option>Information about the programme</option>
-                  <option>Support for myself</option>
-                  <option>Support for a loved one</option>
-                  <option>Discussing available options</option>
+                  <option>Yes</option>
+                  <option>No</option>
                 </select>
               </div>
-              <div class="field full"><label for="readiness">Would you like to speak with someone about next steps? *</label>
-                <select id="readiness" name="readiness" required>
+              <div class="field full"><label for="financial_commitment">Are you financially ready to commit 250,000 monthly to personalized coaching with an expert to overcome your addiction? *</label>
+                <select id="financial_commitment" name="financial_commitment" required>
                   <option value="">Choose an option</option>
-                  <option>Yes, I am ready to talk</option>
-                  <option>I am exploring my options</option>
-                  <option>I am enquiring on behalf of someone else</option>
+                  <option>Yes</option>
+                  <option>No</option>
                 </select>
               </div>
-              <div class="field full"><label for="budget">Can you discuss programme fees with our team if the programme may be suitable? *</label>
-                <select id="budget" name="fee_discussion" required>
+              <div class="field full"><label for="payment_structure">Would you be needing a payment structure to enable you attend this program fully? *</label>
+                <select id="payment_structure" name="payment_structure" required>
                   <option value="">Choose an option</option>
-                  <option>Yes, I can discuss the fees</option>
-                  <option>I need more information first</option>
-                  <option>I would like to understand other options</option>
+                  <option>Yes</option>
+                  <option>No</option>
                 </select>
               </div>
-              <div class="field full"><label for="message">Anything else you’d like us to know? (optional)</label><textarea id="message" name="message" placeholder="Keep this brief. Please do not include detailed medical history or other highly sensitive information."></textarea></div>
+              <div class="field full"><label for="message">Is there any relevant information you want to share?</label><textarea id="message" name="relevant_information"></textarea></div>
             </div>
-            <label class="consent"><input type="checkbox" name="contact_consent" value="yes" required><span>I agree that Dominion Recovery may contact me about this enquiry. *</span></label>
             <button class="form-submit" type="submit">Send my enquiry</button>
-            <p class="privacy">Please share only the information needed for the team to respond. Do not include detailed medical history or other highly sensitive information.</p>
+            <p class="privacy">All information provided will be treated as confidential and used only for addiction-recovery coaching. It will not be shared with external parties, except that Formspree processes form submissions as our service provider.</p>
           </form>
           <div id="form-status" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
         </div>
